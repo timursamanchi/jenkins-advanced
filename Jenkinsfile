@@ -49,5 +49,22 @@ pipeline {
 
             }
         }
+        stage ('DEPLOY') {
+            steps {
+                sh 'echo " Build ID: ${BUILD_ID}" > jenkins-advanced-report.txt'
+            }
+        }
+        stage ('REPORT') {
+            steps {
+                echo "creating build report..."
+            }
+        }
+        // post deployment collection of stages that will only run after all other stages have completed
+        post {
+            //this stage will ALWAYS run regadless of outcome
+            always {
+                echo "thnaks for using jenkins, goodbye."
+            }
+        } 
     }
 }
