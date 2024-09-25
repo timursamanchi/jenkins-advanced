@@ -41,7 +41,8 @@ pipeline {
             steps {
                 echo "gathering requirements..."
                 echo "making test script excutable"
-                sh ('chmod +x ./scripts/test.sh')
+                sh ('cat ./scripts/test.sh')
+                
             }
         }
         stage ('BUILD') {
