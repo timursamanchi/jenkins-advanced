@@ -40,6 +40,8 @@ pipeline {
         stage ('PREP') {
             steps {
                 echo "gathering requirements..."
+                echo "making test script excutable"
+                sh ('chmod +x ./scripts/test.sh')
 
             }
         }
