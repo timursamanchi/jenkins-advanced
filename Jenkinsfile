@@ -42,13 +42,14 @@ pipeline {
                 echo "gathering requirements..."
                 echo "making test script excutable"
                 sh ('chmod +x ./scripts/test.sh')
-
             }
         }
         stage ('BUILD') {
             steps {
                 echo "starting the build process..."
-
+                dir ("${env.WORKSPACE/scripts}") {
+                    sh ("./scripts/test.sh ${env.CONSTANT}")
+                }
             }
         }
         stage ('DEPLOY') {
