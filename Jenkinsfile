@@ -3,7 +3,7 @@ pipeline {
     
     environment {
         MY_STR = 'Hi, this is Timur....'
-        CONST_NUM = 999
+        CONSTANT = 999
     }
 
     parameters {
