@@ -41,13 +41,13 @@ pipeline {
             steps {
                 echo "gathering requirements..."
                 echo "making test script excutable"
-                sh ('cat ./scripts/test.sh')
+                sh ('chmod +x ./scripts/test.sh')
                 
             }
         }
         stage ('BUILD') {
             steps {
-                echo "starting the build process..."
+                echo "starting the build process ${env.WORKSPACE}..."
                 dir ("${env.WORKSPACE/scripts}") {
                     sh ("./scripts/test.sh ${env.CONSTANT}")
                 }
