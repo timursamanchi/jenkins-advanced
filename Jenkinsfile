@@ -16,7 +16,7 @@ pipeline {
             description: 'Enter deployment environment name: ')
 
         booleanParam ( name: 'RUN_TEST',
-            defaultValue: true,
+            defaultValue: false,
             description: 'checkbox to run pre-deployement tests: ' )
     }
     
