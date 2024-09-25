@@ -22,8 +22,8 @@ pipeline {
 
     // configure jenkins options
     options {
-        // add timestamp to log files
-        timestamp()
+        // add timestamps to log files
+        timestamps()
         //cause the build to timeout if it runs for more than an hour
         timeout(time: 1, unit: 'HOURS')
         // only keep 10 logs for no more than 10 days
