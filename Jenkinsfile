@@ -49,7 +49,7 @@ pipeline {
             steps {
                 echo "starting the build process ${env.WORKSPACE}..."
                 dir ("${env.WORKSPACE/scripts}") {
-                    sh ("./scripts/test.sh ${env.CONSTANT}")
+                    sh ("./test.sh ${env.CONSTANT}")
                 }
             }
         }
