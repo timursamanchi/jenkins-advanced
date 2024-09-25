@@ -59,12 +59,12 @@ pipeline {
                 echo "creating build report..."
             }
         }
-        // post deployment collection of stages that will only run after all other stages have completed
+    }
+    // post deployment collection of stages that will only run after all other stages have completed
         post {
             //this stage will ALWAYS run regadless of outcome
             always {
                 echo "thnaks for using jenkins, goodbye."
             }
         } 
-    }
 }
