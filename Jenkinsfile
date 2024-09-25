@@ -57,6 +57,7 @@ pipeline {
         stage ('REPORT') {
             steps {
                 echo "creating build report..."
+                archiveArtifacts allowEmptyArchive: true, artifacts: '*.txt', fingerprint: true, followSymlinks: false, onlyIfSuccessful: true
             }
         }
     }
@@ -64,7 +65,7 @@ pipeline {
         post {
             //this stage will ALWAYS run regadless of outcome
             always {
-                echo "thnaks for using jenkins, goodbye."
+                echo "thanks for using jenkins, goodbye."
             }
         } 
 }
